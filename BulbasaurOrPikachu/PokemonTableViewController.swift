@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class PokemonTableViewController: UITableViewController {
+    
+    var pokemons = [Pokemon]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,29 @@ class PokemonTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        pokemons.append(Pokemon(name:"Pikachu",description_:"A tiny animal that throws lightstorms."))
+        pokemons.append(Pokemon(name:"Bulbasaur",description_:"A heavy animal that throws plants."))
+        
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        view.addSubview(activityIndicator)
+        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
+        activityIndicator.startAnimating()
+//        Alamofire.Request(
+//            URL(string:"https://pokedex-mti.twitchytv.live/species")!,
+//            method:.get
+//        ).validate()
+//            .responseJSON{ (response) -> Void in
+//                guard response.result.isSuccess else {
+//                    print("Error while fetching pokemons.")
+//                    completion(nil)
+//                    return
+//                }
+//
+//                completion(response.result.value)
+//        }
+    }
+    
+    @IBAction func unwind(_ segue:UIStoryboardSegue) {
     }
 
     // MARK: - Table view data source
@@ -29,19 +55,31 @@ class PokemonTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return pokemons.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListPrototypeCell", for: indexPath)
 
-        // Configure the cell...
+        if indexPath.row < pokemons.count {
+            let pokemon = pokemons[indexPath.row]
+            cell.textLabel?.text = pokemon.name
+        }
 
         return cell
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "PokemonDescrition", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDescrition" {
+            // do things ...
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -86,5 +124,4 @@ class PokemonTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
