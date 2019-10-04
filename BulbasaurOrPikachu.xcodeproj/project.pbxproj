@@ -13,6 +13,7 @@
 		4C8B0A822346246900D2568D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B0A812346246900D2568D /* Assets.xcassets */; };
 		4C8B0A852346246900D2568D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B0A832346246900D2568D /* LaunchScreen.storyboard */; };
 		4C8B0AB1234631E800D2568D /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B0AB0234631E800D2568D /* ImageClassifier.mlmodel */; };
+		4C8B0AB323474E1200D2568D /* PokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B0AB223474E1200D2568D /* PokemonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		4C8B0AAD2346292B00D2568D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8B0AAE2346292B00D2568D /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		4C8B0AB0234631E800D2568D /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
+		4C8B0AB223474E1200D2568D /* PokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				4C8B0AAF234631C200D2568D /* resources */,
 				4C8B0A7A2346246700D2568D /* AppDelegate.swift */,
+				4C8B0AB223474E1200D2568D /* PokemonTableViewController.swift */,
 				4C8B0A7C2346246700D2568D /* ViewController.swift */,
 				4C8B0A7E2346246700D2568D /* Main.storyboard */,
 				4C8B0A812346246900D2568D /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 			files = (
 				4C8B0A7D2346246700D2568D /* ViewController.swift in Sources */,
 				4C8B0AB1234631E800D2568D /* ImageClassifier.mlmodel in Sources */,
+				4C8B0AB323474E1200D2568D /* PokemonTableViewController.swift in Sources */,
 				4C8B0A7B2346246700D2568D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
